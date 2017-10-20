@@ -64,7 +64,7 @@ namespace t_ejercicio_sorteo
             List<string> participantes = new List<string>();
             Console.WriteLine("Vamos a hacer un sorteo con cualquier número de participantes");
 
-            //Llenar el array con los participantes
+            //Pedir un nombre y llenar la lista con los participantes
             string entrada = "";
             Console.WriteLine("Ingrese el nombre de 1 participante o 'listo' para salir:");
             entrada = Console.ReadLine();
