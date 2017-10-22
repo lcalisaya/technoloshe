@@ -1,0 +1,6 @@
+[submodule "Technoloshe20173CConsole"]
+	path = Technoloshe20173CConsole
+	url = https://github.com/jlalla/Technoloshe20173CConsole.git
+[submodule "ComItTechnoloshe20173CMenu"]
+	path = ComItTechnoloshe20173CMenu
+	url = https://github.com/jlalla/ComItTechnoloshe20173CMenu.git
