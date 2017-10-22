@@ -33,6 +33,9 @@ namespace project1_saturday
 
             //(crtl + k + c) atajo para comentar líneas
             //(alt + shift + f) para indentar
+
+            double numero = Convert.ToDouble("lucia");
+            Console.WriteLine("una string de convierte a doble así: {0}", numero);
         }
     }
 }
