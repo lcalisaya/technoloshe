@@ -5,7 +5,7 @@ namespace Calculadora
     class Program
     {
         /// <summary>
-        /// Muestra el menú de la aplicación.
+        /// Muestra el menú de la aplicación. Se lo obtiene llamando a una función.
         /// </summary>
         static void MostrarMenu()
         {
@@ -16,30 +16,81 @@ namespace Calculadora
             Console.WriteLine("0- Salir");
         }
 
+        //Función que valida la opción que ingresa el Usuario
+        static int ValidarOpcion()
+        {
+            int opcionValidada;
+            string entradaUsuario = Console.ReadLine();
+            while (entradaUsuario != "0" && entradaUsuario != "1" && entradaUsuario != "2")
+            {
+                Console.WriteLine("Opción inválida");
+                MostrarMenu();
+                entradaUsuario = Console.ReadLine();
+            }
+            opcionValidada = int.Parse(entradaUsuario);
+            return opcionValidada;
+        }
+
+        //Función que pide un número válido (para hacer una operación matemática)
+        static double pedirNumero(string cartel)
+        {
+            double numero;
+            Console.WriteLine(cartel);
+            string cadena = Console.ReadLine();
+            while (!Double.TryParse(cadena, out numero))
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Número inválido. Por favor intenté ingresar una cantidad sin '.' y puede ser decimal(Ej. 3,14):");
+                cadena = Console.ReadLine();
+            }
+            numero = Convert.ToDouble(cadena);
+            return numero;
+        }
+        //Función que suma 2 números
+        static double SumarDosNumeros(double num1, double num2)
+        {
+            return num1 + num2;
+        }
+
+        //Función que multiplica 2 números
+        static double MultiplicarDosNumeros(double num1, double num2)
+        {
+            return num1 * num2;
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Bienvenido a la calculadora");
             MostrarMenu();
 
-            int opcion = int.Parse(Console.ReadLine());
-            while(opcion != 0)
-            {                
-                switch(opcion)
+            int opcion = ValidarOpcion();
+            while (opcion != 0)
+            {
+                double numero1;
+                double numero2;
+                double total;
+                switch (opcion)
                 {
                     case 1:
-                        //sumar TODO
+                        //Se piden 2 números y luego se muestra la suma
+                        numero1 = pedirNumero("Ingrese una cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
+                        numero2 = pedirNumero("Ingrese otra cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
+                        total = SumarDosNumeros(numero1, numero2);
+                        Console.WriteLine("RESPUESTA: {0} + {1} = {2}", numero1, numero2, total);
+                        Console.WriteLine("------");
                         break;
-                    case 2:         
-                        //multiplicar TODO           
+                    case 2:
+                        //Se piden 2 números y se presenta el resultado de la multiplicación
+                        numero1 = pedirNumero("Ingrese una cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
+                        numero2 = pedirNumero("Ingrese otra cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
+                        total = MultiplicarDosNumeros(numero1, numero2);
+                        Console.WriteLine("RESPUESTA: {0} * {1} = {2}", numero1, numero2, total);
+                        Console.WriteLine("------");
                         break;
-                    default:
-                        Console.WriteLine("Opción inválida");                    
-                        MostrarMenu();
-                        opcion = int.Parse(Console.ReadLine());
-                        break;            
                 }
+                //Una vez que se terminó la operación, se le vuelve a preguntar al Usuario que quiere hacer
+                MostrarMenu();
+                opcion = ValidarOpcion();
             }
-
             Console.WriteLine("Chau!!!!");
             Console.ReadKey();
         }
