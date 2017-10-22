@@ -13,6 +13,8 @@ namespace Calculadora
             Console.WriteLine();
             Console.WriteLine("1- Sumar dos números");
             Console.WriteLine("2- Multiplicar dos números");
+            Console.WriteLine("3- Restar dos números");
+            Console.WriteLine("4- Dividir dos números");
             Console.WriteLine("0- Salir");
         }
 
@@ -21,7 +23,7 @@ namespace Calculadora
         {
             int opcionValidada;
             string entradaUsuario = Console.ReadLine();
-            while (entradaUsuario != "0" && entradaUsuario != "1" && entradaUsuario != "2")
+            while (entradaUsuario != "0" && entradaUsuario != "1" && entradaUsuario != "2" && entradaUsuario != "3" && entradaUsuario != "4")
             {
                 Console.WriteLine("Opción inválida");
                 MostrarMenu();
@@ -57,6 +59,26 @@ namespace Calculadora
         {
             return num1 * num2;
         }
+
+        //Función que resta 2 números
+        static double RestarDosNumeros(double num1, double num2)
+        {
+            return num1 - num2;
+        }
+
+        //Función que divide 2 números
+        static double DividirDosNumeros(double num1, double num2)
+        {
+            if (num2 == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return num1 / num2;
+            }
+
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Bienvenido a la calculadora");
@@ -84,6 +106,29 @@ namespace Calculadora
                         numero2 = pedirNumero("Ingrese otra cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
                         total = MultiplicarDosNumeros(numero1, numero2);
                         Console.WriteLine("RESPUESTA: {0} * {1} = {2}", numero1, numero2, total);
+                        Console.WriteLine("------");
+                        break;
+                    case 3:
+                        //Se piden 2 números y se muestra la resta
+                        numero1 = pedirNumero("Ingrese una cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
+                        numero2 = pedirNumero("Ingrese otra cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
+                        total = RestarDosNumeros(numero1, numero2);
+                        Console.WriteLine("RESPUESTA: {0} - {1} = {2}", numero1, numero2, total);
+                        Console.WriteLine("------");
+                        break;
+                    case 4:
+                        //Se piden 2 números y se muestra la división
+                        numero1 = pedirNumero("Ingrese una cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
+                        numero2 = pedirNumero("Ingrese otra cantidad --No '0', No '.' y puede ser decimal (Ej: 3,14):");
+                        total = DividirDosNumeros(numero1, numero2);
+                        if (total == 0)
+                        {
+                            Console.WriteLine("RESPUESTA: {0} / {1} = NO SE PUEDE DIVIDIR POR 0", numero1, numero2, total);
+                        }
+                        else
+                        {
+                            Console.WriteLine("RESPUESTA: {0} / {1} = {2}", numero1, numero2, total);
+                        }
                         Console.WriteLine("------");
                         break;
                 }
