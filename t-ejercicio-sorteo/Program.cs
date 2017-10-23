@@ -71,17 +71,16 @@ namespace t_ejercicio_sorteo
 
             while (entrada != "listo")
             {
-                if (entrada == "")
+                if (entrada == "" || String.IsNullOrWhiteSpace(entrada))
                 {
                     Console.WriteLine("El nombre no puede estar vacío. Ingrese un nombre o 'listo' para salir:");
                     entrada = Console.ReadLine();
                 }
                 else
                 {
-                    participantes.Add(entrada);
+                    participantes.Add(entrada.Trim());
                     Console.WriteLine("Ingrese el nombre de 1 participante o 'listo' para salir:");
                     entrada = Console.ReadLine();
-
                 }
 
             }
