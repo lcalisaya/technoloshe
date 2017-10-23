@@ -69,15 +69,7 @@ namespace Calculadora
         //Función que divide 2 números
         static double DividirDosNumeros(double num1, double num2)
         {
-            if (num2 == 0)
-            {
-                return 0;
-            }
-            else
-            {
-                return num1 / num2;
-            }
-
+            return num1 / num2;
         }
         static void Main(string[] args)
         {
@@ -120,13 +112,13 @@ namespace Calculadora
                         //Se piden 2 números y se muestra la división
                         numero1 = pedirNumero("Ingrese una cantidad --Sin puntos y puede ser decimal (Ej: 3,14):");
                         numero2 = pedirNumero("Ingrese otra cantidad --No '0', No '.' y puede ser decimal (Ej: 3,14):");
-                        total = DividirDosNumeros(numero1, numero2);
-                        if (total == 0)
+                        if (numero2 == 0)
                         {
-                            Console.WriteLine("RESPUESTA: {0} / {1} = NO SE PUEDE DIVIDIR POR 0", numero1, numero2, total);
+                            Console.WriteLine("RESPUESTA: {0} / {1} = NO SE PUEDE DIVIDIR POR 0", numero1, numero2);
                         }
                         else
                         {
+                            total = DividirDosNumeros(numero1, numero2);
                             Console.WriteLine("RESPUESTA: {0} / {1} = {2}", numero1, numero2, total);
                         }
                         Console.WriteLine("------");
