@@ -28,7 +28,21 @@ namespace t_ejercicio_cuentas
             {
                 Console.WriteLine("- {0}", c.NombreCompleto);
             }
+            
             Console.WriteLine("posee el saldo de: {0:c}", cuenta.Saldo);
+
+            cuenta.RetirarDinero(3000);
+            cuenta.IngresarDinero(4000);
+            cuenta.RetirarDinero(8930.58m);
+
+            Console.WriteLine("posee el saldo de: {0:c}", cuenta.Saldo);
+
+            Console.WriteLine("Las operaciones realizadas y registradas de la cuenta {0} son:", cuenta.NumeroCuenta);
+            foreach(string operacion in cuenta.RegistroOperaciones)
+            {
+                Console.WriteLine(operacion);
+            }
+            
 
             // Console.WriteLine();
             // Console.WriteLine("Un objeto cuenta pasado a string:");
