@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace t_ejercicio_cuentas
 {
@@ -10,6 +11,7 @@ namespace t_ejercicio_cuentas
         public string Telefono { get; set; }
         public DateTime FechaDeNacimiento { get; set; }
 
+        //Constructor de la clase Cliente
         public Cliente(string dni, string nombre, string mail, string telefono, DateTime fechaNacimiento)
         {
             this.DNI = dni;
