@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace t_ejercicio_cuentas
 {
+    /// <summary>
+    /// La clase Cliente define los datos que se guardarán del cliente y operaciones que podrá realizar
+    /// </summary>
     public class Cliente
     {
         public string DNI { get; set; }
