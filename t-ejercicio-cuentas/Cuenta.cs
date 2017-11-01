@@ -5,8 +5,10 @@ namespace t_ejercicio_cuentas
 {
     /// <summary>
     /// La clase Cuenta es la base de la clase CajaAhorro y la base de la clase CuentaCorriente
+    /// Es una clase abstracta, lo que significa que no se pueden instanciar objetos de clase Cuenta
+    /// No obstante, cuando se creen objetos CajaAhorro o CuentaCorriente, los mismos llamarán al constructor de la clase Cuenta(clase base)
     /// </summary>
-    public class Cuenta
+    public abstract class Cuenta
     {
         public string NumeroCuenta { get; set; }
         public List<Cliente> Titulares { get; set; }
