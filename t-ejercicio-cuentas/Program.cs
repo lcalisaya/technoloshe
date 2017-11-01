@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace t_ejercicio_cuentas
 {
@@ -8,6 +9,9 @@ namespace t_ejercicio_cuentas
     {
         static void Main(string[] args)
         {
+            //Para que en la consola se visualice el simbolo '$' en vez de '€'
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-AR",false);   
+            
             //Se crea un objeto Cliente y un objeto CuentaCorriente
             Cliente titular = new Cliente("37.193.495", "Lorena Fernandez", "lfernandez@gmail.com", "4826-2473", DateTime.Parse("24/01/1990"));
             CuentaCorriente cuentaCorriente = new CuentaCorriente("cc-0001", 1000, titular);
@@ -34,13 +38,13 @@ namespace t_ejercicio_cuentas
             }
 
             //Presenta el saldo de la cuenta
-            Console.WriteLine("posee el saldo de: {0:c}", cuentaCorriente.Saldo);
+            Console.WriteLine("posee el saldo de: {0}", cuentaCorriente.Saldo.ToString("C2"));
 
             cuentaCorriente.RetirarDinero(3000);
             cuentaCorriente.IngresarDinero(4000);
             cuentaCorriente.RetirarDinero(8930.58m);
 
-            Console.WriteLine("posee el saldo de: {0:c}", cuentaCorriente.Saldo);
+            Console.WriteLine("posee el saldo de: {0:c}", cuentaCorriente.Saldo.ToString("C2"));
 
             //Se muestra el historial/log de operaciones de la cuenta
             Console.WriteLine("Las operaciones realizadas y registradas de la cuenta corriente {0} son:", cuentaCorriente.NumeroCuenta);
@@ -70,13 +74,13 @@ namespace t_ejercicio_cuentas
             }
 
             //Saldo de la cuenta
-            Console.WriteLine("posee el saldo de: {0:c}", cajaAhorro.Saldo);
+            Console.WriteLine("posee el saldo de: {0:c}", cajaAhorro.Saldo.ToString("C2"));
 
             cajaAhorro.RetirarDinero(3000);
             cajaAhorro.IngresarDinero(4000);
             cajaAhorro.RetirarDinero(8930.58m);
 
-            Console.WriteLine("posee el saldo de: {0:c}", cajaAhorro.Saldo);
+            Console.WriteLine("posee el saldo de: {0}", cajaAhorro.Saldo.ToString("C2"));
 
             //Registro de todas la operaciones que se quisieron realizar en la caja de ahorro
             Console.WriteLine("Las operaciones realizadas y registradas de la caja de ahorro {0} son:", cajaAhorro.NumeroCuenta);

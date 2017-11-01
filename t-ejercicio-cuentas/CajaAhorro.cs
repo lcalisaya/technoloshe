@@ -20,14 +20,12 @@ namespace t_ejercicio_cuentas
             if (this.Saldo >= monto)
             {
                 this.Saldo = this.Saldo - monto;
-                RegistrarOperaciones(string.Format("- Se retira dinero. Monto = {0:c}", monto));
+                RegistrarOperaciones(string.Format("- Se retira dinero. Monto = {0}", monto.ToString("C2")));
             }
             else
             {
-                RegistrarOperaciones(string.Format("x Operación denegada por solicitar un Monto = {0:c} mayor al Saldo = {1:c}", monto, this.Saldo));
+                RegistrarOperaciones(string.Format("x Operación denegada por solicitar un Monto = {0:c} mayor al Saldo = {1}", monto, this.Saldo.ToString("C2")));
             }
-
         }
-
     }
 }
