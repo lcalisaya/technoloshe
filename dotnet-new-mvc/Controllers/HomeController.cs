@@ -17,14 +17,14 @@ namespace dotnet_new_mvc.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "La página de descripción de tu aplicación.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Tu página de contacto";
 
             return View();
         }
