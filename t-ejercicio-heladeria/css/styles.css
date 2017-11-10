@@ -1,8 +1,101 @@
 *{
     font-family: 'Comfortaa', cursive;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+body {
+    background-color: #2A1219;
+}
+
+header {
+    margin: 20px;
+    color: #E1D6DA;
+}
 h1 {
     font-family: 'Satisfy', cursive;
     font-size: 50px;
+}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+}
+
+#menu li{
+    justify-content: space-around;
+    flex-grow: 1;
+    background-color: #E45F7F;
+    padding: 20px;
+}
+
+#menu li a{
+    text-decoration: none;
+    color: #E0D6D9;
+}
+
+#menu li a:hover{
+    color: #2A1219;
+    text-decoration: underline;
+}
+
+nav {
+    margin: 20px 0px;
+}
+
+#img-principal{
+    width: 100%;
+}
+
+h3 {
+    color: #E0D6D9;
+    border-bottom: 2px solid #E45F7F;
+    margin: 10px 0;
+    padding-bottom: 5px;
+}
+
+#historia, #producto{
+    margin: 20px 0;
+}
+
+#historia p {
+    color:#E1D6DA;
+    padding: 10px 0px;
+}
+
+.img-hijos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #E1D6DA;
+    margin-top: 20px;
+}
+
+.img-hijos div {
+    flex-basis: 100%;
+}
+
+
+#proceso p {
+    color:#E1D6DA;
+    padding: 10px 0px;
+}
+
+footer{
+    margin: 50px auto;
+    color: #E1D6DA;
+    letter-spacing: 3px;
+    border-top: 2px solid#E1D6DA;
+    padding-top: 20px;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
 }
