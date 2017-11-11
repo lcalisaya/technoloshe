@@ -11,11 +11,12 @@ body {
 
 header {
     margin: 20px;
-    color: #E1D6DA;
 }
+
 h1 {
     font-family: 'Satisfy', cursive;
     font-size: 50px;
+    color: #E1D6DA;
 }
 
 #container {
@@ -81,6 +82,9 @@ h3 {
     flex-basis: 100%;
 }
 
+.img-hijos p {
+    padding: 10px 0;
+}
 
 #proceso p {
     color:#E1D6DA;
@@ -97,5 +101,76 @@ footer{
 }
 
 footer p {
+    text-align: center;
+}
+
+h2 {
+    color: #E0D6D9;
+    padding: 15px 0;
+}
+
+form {
+    color: #E0D6D9;
+    border: 1px dashed #E0D6D9;
+    padding: 20px;
+}
+
+#padre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.hijo{
+    width: 600px; 
+    padding: 10px;
+}
+
+#padre-checkbox{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type= "checkbox"]{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#boton{
+    background-color:#E1D6DA;
+    padding: 12px;
+    flex-grow: 0.3;
+    font-weight: bold;
+}
+
+.hijo.derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#padre-atencion-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+#atencion-img{
+    width:400px;
+    height:300px;
+    padding:15px;
+}
+
+#contacto-titulo{
+    margin: 20px 0;
     text-align: center;
 }

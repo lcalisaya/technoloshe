@@ -9,45 +9,61 @@
 </head>
 
 <body>
+    <div id="container">
+        <h2 id="contacto-titulo">Envie su reclamo, consulta o sugerencia y a la brevedad le responderemos:</h2>
+        <form action="" id="padre">
+            <div class="hijo">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text">
+            </div>
+            <div class="hijo">
+                <label for="email">Correo electrónico:</label>
+                <input type="email">
+            </div>
+            <div class="hijo">
+                <label for="ciudad">Ciudad/Localidad:</label>
+                <input type="text">
+            </div>
+            <div class="hijo">
+                <label for="mensaje">Mensaje:</label>
+            </div>
+            <div class="hijo">
+                <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="hijo">
+                <label for="">¿Primer contacto con la empresa?</label>
+                <input type="radio" name="primer_contacto" value="1" checked> Sí
+                <input type="radio" name="primer_contacto" value="0"> No
+            </div>
+            <div class="hijo">
+                <label for="">Medios alternativos de contacto:</label>
+            </div>
+            <div class="hijo" id="padre-checkbox">
+                <div>
+                    <input type="checkbox" name="medios_com" value="1" checked>Quiero recibir noticias de la Heladeria
+                </div>
+                <div>
+                    <input type="checkbox" name="medios_com" value="2">Sigo a la Heladería en Twitter
+                </div>
+                <div>
+                    <input type="checkbox" name="medios_com" value="3">Sigo a la Heladería en Facebook
+                </div>
+            </div>
 
-    <h2>Envie su reclamo, consulta o sugerencia y a la brevedad le responderemos:</h2>
-    <form action="">
-        <label for="nombre">Nombre y Apellido:</label>
-        <input type="text">
-        <br>
+            <div class="hijo derecha">
+                <input type="submit" id="boton" value="Enviar mensaje">
+            </div>
+        </form>
 
-        <label for="email">Correo electrónico:</label>
-        <input type="email">
-        <br>
+        <div id="padre-atencion-img">
+            <img id="atencion-img" src="images/atencion-cliente.jpg" alt="Atención al cliente">
+            <div>
+                <h1>Como hace diez años - Helados</h1>
+                <h2>Ventas por Mayor y Menor</h2>
+            </div>
+        </div>
 
-        <label for="ciudad">Ciudad:</label>
-        <input type="text">
-        <br>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
-        <br>
-
-        <label for="">¿Primer contacto con la empresa?</label>
-        <br>
-        <input type="radio" name="primer_contacto" value="1" checked> Sí
-        <br>
-        <input type="radio" name="primer_contacto" value="0"> No
-        <br>
-
-        <label for="">Medios alternativos de contacto:</label>
-        <br>
-        <input type="checkbox" name="medios_com" value="1" checked>Quiero recibir noticias de la Heladeria
-        <br>
-        <input type="checkbox" name="medios_com" value="2">Sigo a la Heladería en Twitter
-        <br>
-        <input type="checkbox" name="medios_com" value="3">Sigo a la Heladería en Facebook
-        <br>
-
-        <input type="submit" value="Enviar mensaje">
-    </form>
-
-    <img src="images/atencion-cliente.jpg" alt="Atención al cliente" width="400">
+    </div>
 
 </body>
 
