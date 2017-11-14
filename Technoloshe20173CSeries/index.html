@@ -5,22 +5,41 @@
     Usamos este charset para ver los tildes.
     -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Series - Principal</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <!-- para incluir un archivo css -->
-    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="css/general.css">
 </head>
 <body>
 
-    <h1>Series</h1>
-    <ul id="menu">
-        <li>Acción</li>
-        <li>Ciencia Ficcion</li>
-        <li>Drama</li>
-        <li><a href="pages/contacto.html">Contacto</a></li>
-    </ul>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#seccionColapsable" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Series</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="seccionColapsable">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
+              <li><a href="pages/contacto.html">Contacto</a></li>
+            </ul>
+          </div> 
+        </div>
+    </nav>
 
 
     <p>En esta aplicación vamos a hablar de series.</p>
@@ -30,23 +49,48 @@
 
     <h2>Series de Ciencia Ficción</h2>
 
-    <div class="pelicula">    
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png"/>    
-        <h3>Stranger Things</h3>
-        <p class="sinopsis principal">Stranger Things is an American science fiction-horror web television series created, written, directed and co-executive produced by the Duffer Brothers, as well as co-executive produced by Shawn Levy and Dan Cohen. The first season, released in July 2016, stars Winona Ryder, David Harbour, Finn Wolfhard, Millie Bobby Brown, Gaten Matarazzo, Caleb McLaughlin, Natalia Dyer, Charlie Heaton, Cara Buono and Matthew Modine, with Noah Schnapp and Joe Keery in recurring roles. For the second season, Schnapp and Keery were promot.</p>
-        <!-- el target lo usamos para abrir el link en un nuevo tab -->
-        <a href="https://www.netflix.com/us-es/title/80057281" target="_blank">Ver sitio principal...</a>
+    <div class="container-fluid">
+        <div class="row">            
+        <div class="col-md-6 col-md-offset-3">            
+            <img class="col-md-4 img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png"/>    
+            <div class="col-md-8">
+                <h3>Stranger Things</h3>
+                <p class="sinopsis principal">Stranger Things is an American science fiction-horror web television series created, written, directed and co-executive produced by the Duffer Brothers.</p>
+                <!-- el target lo usamos para abrir el link en un nuevo tab -->
+                <a href="https://www.netflix.com/us-es/title/80057281" target="_blank">Ver sitio principal...</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-4 col-xs-6">
+            <img class="col-md-4 img-responsive" src="https://upload.wikimedia.org/wikipedia/en/2/24/BlackMirrorTitleCard.jpg">
+            <div class="col-md-8">
+                <h3>Black Mirror</h3>
+                <p class="visible-xs hidden-md sinopsis">Black Mirror está buenísima.</p>        
+                <p class="hidden-xs sinopsis">Black Mirror is a British science fiction television anthology series created by Charlie Brooker. It centres around dark and satirical themes that examine modern society, particularly with regard to the unanticipated consequences of new technologies.</p>        
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-6">
+            <img class="col-md-4 img-responsive" src="https://upload.wikimedia.org/wikipedia/en/2/24/BlackMirrorTitleCard.jpg">
+            <div class="col-md-8">
+                <h3>The OA</h3>
+                <p class="sinopsis">The OA is an American mystery drama Netflix series with science fiction, supernatural, and fantasy elements,[5][6] which debuted on Netflix on December 16, 2016.[7][8] Created and executive produced by Brit Marling and Zal Batmanglij, the series is their third collaboration.</p>        
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-xs-6">
+            <img class="col-md-4 img-responsive" src="https://upload.wikimedia.org/wikipedia/en/2/24/BlackMirrorTitleCard.jpg">
+            <div class="col-md-8">
+                <h3>Game of Thrones</h3>
+                <p class="sinopsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>        
+            </div>
+        </div>
     </div>
 
-    <div class="pelicula">
-        <img src="https://upload.wikimedia.org/wikipedia/en/2/24/BlackMirrorTitleCard.jpg">
-        <h3>Black Mirror</h3>
-        <p class="sinopsis">Black Mirror is a British science fiction television anthology series created by Charlie Brooker. It centres around dark and satirical themes that examine modern society, particularly with regard to the unanticipated consequences of new technologies.[1] Episodes are standalone works, usually set in an alternative present or the near future. The show was first broadcast on the British Channel 4, in December 2011. A second series ran during February 2013. Then, in September 2015, Netflix commissioned a third series of 12 episodes, released in 2016.[2] The commissioned episodes were later divided into two series of six episodes. The third series was released on Netflix worldwide on 21 October 2016. Filming for the fourth series concluded in June 2017,[3] with the premiere expected later the same year.[4]</p>        
-    </div>
-    <ul>
-        <li>Acción</li>
-        <li>Drama</li>
-        <li>Ficción</li>
-    </ul>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
