@@ -8,6 +8,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- Librería jQuery para que funcione el javascript de Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -116,8 +117,8 @@
                         <img src="http://lorempixel.com/400/200/business" alt="thumbnail 2">
                         <div class=caption>
                             <h3>Thumbnail título</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi maiores ex laborum sed impedit, 
-                                consequatur animi nam nobis at blanditiis recusandae alias dolores ipsa laboriosam aliquid 
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi maiores ex laborum sed impedit,
+                                consequatur animi nam nobis at blanditiis recusandae alias dolores ipsa laboriosam aliquid
                             </p>
                             <p>
                                 <a href=# class="btn btn-primary" role=button>Botón</a>
@@ -131,14 +132,105 @@
                         <img src="http://lorempixel.com/400/200/transport" alt="thumbnail 3">
                         <div class=caption>
                             <h3>Thumbnail título</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus mollitia ab odio, 
-                                nihil, qui aut nam accusamus alias debitis eum, cum ex animi iusto eius nemo!
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus mollitia ab odio, nihil, qui
+                                aut nam accusamus alias debitis eum, cum ex animi iusto eius nemo!
                             </p>
                             <p>
                                 <a href=# class="btn btn-success" role=button>Botón</a>
                                 <a href=# class="btn btn-default" role=button>Botón</a>
                             </p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Ejemplo de botones:</h2>
+                <button type="button" class="btn btn-default btn-success">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                </button>
+
+                <button type="button" class="btn btn-default btn-lg btn-info">
+                    <span class="glyphicon glyphicon-headphones"></span> Auriculares
+                </button>
+
+                <button type="button" class="btn btn-default btn-md btn-primary">
+                    <span class="glyphicon glyphicon-download-alt"></span> Descargas de archivos
+                </button>
+
+                <button type="button" class="btn btn-default btn-xs btn-danger">
+                    <span class="glyphicon glyphicon-wrench"></span> Herramientas
+                </button>
+            </div>
+            <div class="col-md-6">
+                <div class="btn-group-vertical" role=group aria-label="Vertical button group">
+                    <button type=button class="btn btn-default btn-primary">Botón</button>
+                    <button type=button class="btn btn-default btn-primary">Botón</button>
+                    <div class=btn-group role=group>
+                        <button id="VerticalDrop1" type="button" class="btn btn-default dropdown-toggle btn-info" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> Lista desplegable
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="VerticalDrop1">
+                            <li>
+                                <a href="#">Enlace desplegable</a>
+                            </li>
+                            <li>
+                                <a href="#">Enlace desplegable</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Ejemplo de paneles:</h2>
+        <div class="panel panel-default panel-danger">
+            <div class="panel-heading">Encabezado de panel sin título</div>
+            <div class="panel-body">
+                Contenido del panel
+            </div>
+        </div>
+
+        <div class="panel panel-default panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel con título</h3>
+            </div>
+            <div class="panel-body">
+                Contenido del panel
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Ejemplo de ventana modal:</h2>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+            Lanzar ventana modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="ModLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModLabel">Título de la ventana modal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>El texto va aquí.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar cambios</button>
                     </div>
                 </div>
             </div>
