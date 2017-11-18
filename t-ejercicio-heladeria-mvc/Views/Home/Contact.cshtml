@@ -1,17 +1,99 @@
-﻿@{
-    ViewData["Title"] = "Contact";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿<!-- Encabezado de la página, nombre de la empresa -->
+<header>
+    <h1>Como hace diez años - Helados</h1>
+    <h2>Ventas por Mayor y Menor</h2>
+</header>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<!-- Menú de navegación con anclas que van a la misma página excepto la de Contacto -->
+<nav>
+    <ul id="menu">
+        <li>
+            <a href="#historia">Historia de la empresa</a>
+        </li>
+        <li>
+            <a href="#producto">Productos</a>
+        </li>
+        <li>
+            <a href="#proceso">Proceso de Elaboración</a>
+        </li>
+        <li>
+            <a href="#cliente">Clientes</a>
+        </li>
+        <li>
+            <a href="contacto.html">Contacto</a>
+        </li>
+    </ul>
+</nav>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<!-- Foto del producto -->
+<img id="img-principal" src="images/helados-principal.jpg">
+
+<!-- Secciones que describen la heladería -->
+<section id="historia">
+    <h3>Historia de la empresa</h3>
+    <p>
+        La empresa se fundó en 1986, en la localidad de Esteban de Echeverría, provincia de Buenos Aires. En sus comienzos era un
+        emprendimiento de temporada y era dirigido por los 3 hermanos Gutierrez.
+    </p>
+    <p>
+        Rapidamente fueron siendo conocidos en los alrededores por tener una amplia variedad de sabores y buenos precios. Actualmente
+        en la empresa trabajan 80 personas y día a día preparan y ofrecen la mejor calidad de helados y cremas a precios
+        satisfactorios.
+    </p>
+    <p>
+        El crecimiento del emprendimiento era la prioridad para los 3 hermanos. Es así como se esforzaron para mejorar la Producción
+        y Comercialización de los helados, y a su vez conseguir fondos para expandir la llegada de "Como hace diez años"
+        a más mercados.
+    </p>
+</section>
+
+<section id="producto">
+    <h3>Productos</h3>
+    <div class="img-hijos">
+        <div>
+            <img src="images/capelina.png" alt="capelina" width="300">
+            <p>Presentación en capelinas</p>
+        </div>
+        <div>
+            <img src="images/vasito.png" alt="vasito de helado" width="300">
+            <p>Presentación en cucuruchos y vasitos</p>
+        </div>
+        <div>
+            <img src="images/torta-helada.jpg" alt="torta helada" width="300">
+            <p>Presentación en postres y tortas</p>
+        </div>
+    </div>
+</section>
+
+<section id="proceso">
+    <h3>Proceso de elaboración</h3>
+    <p>Los helados son fabricados de manera artesanal. La materia prima se obtiene de reconocidos Proveedores de confianza.
+        Y durante todo el proceso de producción, se respetan y cumplen los estándares de calidad ISO 9000.
+    </p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quas tempora corporis velit eum? Beatae earum, officia
+        blanditiis deleniti porro accusamus, reiciendis repellendus mollitia iure voluptatum dolores, quasi fugiat sequi.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aperiam nulla sunt labore quae atque accusantium,
+        minus vel ipsa inventore omnis quis alias! Ipsa amet cum et ab, quae saepe?
+    </p>
+</section>
+
+<section id="cliente">
+    <h3>Opiniones de nuestros clientes</h3>
+    <div class="img-hijos">
+        <div>
+            <img src="images/cliente1.jpg" width="300" height="300">
+            <p>"Los mejores helados de Zona Oeste! Buenos precios y calidad. En serio, recomendables para todo el año!"</p>
+
+        </div>
+        <div>
+            <img src="images/cliente2.jpg" width="300" height="300">
+            <p>"Se disfruta la variedad de sabores como así también la excelente atención al público"</p>
+
+        </div>
+        <div>
+            <img src="images/cliente3.jpg" width="300" height="300">
+            <p>"Los productos son muy recomendados por venir en distintas presentaciones y tener buenos precios!"</p>
+        </div>
+    </div>
+</section>

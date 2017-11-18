@@ -1,35 +1,192 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿*{
+    font-family: 'Comfortaa', cursive;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+a{
+    text-decoration: none;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+body {
+    background-color: #2A1219;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+header {
+    margin: 20px;
+}
+
+h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
+    color: #E1D6DA;
+}
+
+/* --- Contenedor principal --- */
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* --- Menú principal --- */
+#menu {
+    list-style: none;
+    display: flex;
+}
+
+#menu li{
+    justify-content: space-around;
+    flex-grow: 1;
+    background-color: #E45F7F;
+    padding: 20px;
+}
+
+#menu li a{
+    color: #E0D6D9;
+}
+
+#menu li a:hover{
+    color: #2A1219;
+    text-decoration: underline;
+}
+
+nav {
+    margin: 20px 0px;
+}
+
+/* --- Imagen principal --- */
+#img-principal{
     width: 100%;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+h3 {
+    color: #E0D6D9;
+    border-bottom: 2px solid #E45F7F;
+    margin: 10px 0;
+    padding-bottom: 5px;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+h2 {
+    color: #E0D6D9;
+    padding: 15px 0;
+}
+
+/* --- Secciones --- */
+
+section{
+    margin-top: 40px;
+}
+
+#historia, #producto{
+    margin: 20px 0;
+}
+
+#historia p {
+    color:#E1D6DA;
+    padding: 10px 0px;
+}
+
+.img-hijos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #E1D6DA;
+    margin-top: 20px;
+}
+
+.img-hijos div {
+    flex-basis: 100%;
+}
+
+.img-hijos p {
+    padding: 10px 0;
+}
+
+#proceso p {
+    color:#E1D6DA;
+    padding: 10px 0px;
+}
+
+/* --- Pie de página --- */
+footer{
+    margin: 50px auto;
+    color: #E1D6DA;
+    letter-spacing: 3px;
+    border-top: 2px solid#E1D6DA;
+    padding-top: 20px;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* --- Formulario de contacto --- */
+form {
+    color: #E0D6D9;
+    border: 1px dashed #E0D6D9;;
+    padding: 20px;
+}
+
+#padre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.hijo{
+    width: 600px; 
+    padding: 10px;
+}
+
+#padre-checkbox{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type= "checkbox"]{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#boton{
+    background-color:#E1D6DA;
+    padding: 12px;
+    flex-grow: 0.3;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hijo.derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* --- Imagen de formulario de contacto --- */
+#padre-atencion-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+#atencion-img{
+    width:400px;
+    height:300px;
+    padding:15px;
+}
+
+#contacto-titulo{
+    margin: 20px 0;
+    text-align: center;
 }
