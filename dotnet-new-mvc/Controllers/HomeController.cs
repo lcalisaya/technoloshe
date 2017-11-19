@@ -29,6 +29,14 @@ namespace dotnet_new_mvc.Controllers
             return View();
         }
 
+        
+        public IActionResult BootstrapGrid()
+        {
+            ViewData["Message"] = "Página donde se practica el grid de Bootstrap";
+
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
