@@ -33,3 +33,11 @@
         display: none;
     }
 }
+
+.col {
+    border: 1px solid green;
+}
+
+.row {
+    border: 1px solid crimson;
+}
