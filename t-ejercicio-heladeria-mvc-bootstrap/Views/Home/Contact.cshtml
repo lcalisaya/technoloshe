@@ -1,17 +1,61 @@
-﻿@{
-    ViewData["Title"] = "Contact";
-}
+﻿@{ ViewData["Title"] = "Contacto"; }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<h2>Envie su reclamo, consulta o sugerencia y a la brevedad le responderemos:</h2>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<!-- Formulario, con sus elementos -->
+<form action="">
+    <div>
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text">
+    </div>
+    <div>
+        <label for="email">Correo electrónico:</label>
+        <input type="email">
+    </div>
+    <div>
+        <label for="ciudad">Ciudad/Localidad:</label>
+        <input type="text">
+    </div>
+    <div>
+        <label for="mensaje">Mensaje:</label>
+    </div>
+    <div>
+        <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+        <label for="">¿Primer contacto con la empresa?</label>
+        <input type="radio" name="primer_contacto" value="1" checked> Sí
+        <input type="radio" name="primer_contacto" value="0"> No
+    </div>
+    <div>
+        <label for="">Medios alternativos de contacto:</label>
+    </div>
+    <div>
+        <div>
+            <input type="checkbox" name="medios_com" value="1" checked>Quiero recibir noticias de la Heladeria
+        </div>
+        <div>
+            <input type="checkbox" name="medios_com" value="2">Sigo a la Heladería en Twitter
+        </div>
+        <div>
+            <input type="checkbox" name="medios_com" value="3">Sigo a la Heladería en Facebook
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Enviar mensaje">
+    </div>
+</form>
+
+<!-- Imagen que acompaña al formulario -->
+<div>
+    <img src="~/images/atencion-cliente.jpg" alt="Atención al cliente">
+    <div>
+        <a asp-area="" asp-controller="Home" asp-action="Index">
+            <h1>Como hace diez años - Helados</h1>
+        </a>
+        <h2>Ventas por Mayor y Menor</h2>
+    </div>
+</div>

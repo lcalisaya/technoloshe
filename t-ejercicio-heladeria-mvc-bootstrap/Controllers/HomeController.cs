@@ -17,15 +17,17 @@ namespace t_ejercicio_heladeria_mvc_bootstrap.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            ViewData["Message"] = "Entregar calidad en los Productos y la mejor atención a nuestros Clientes es nuestro compromiso.";
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            return View();
+        }
 
+        public IActionResult Client()
+        {
             return View();
         }
 

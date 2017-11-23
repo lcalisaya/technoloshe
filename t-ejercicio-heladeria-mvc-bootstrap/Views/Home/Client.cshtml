@@ -1,0 +1,33 @@
+@{ ViewData["Title"] = "Opiniones de nuestros Clientes"; }
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<div class=row>
+    <div class="col-sm-6 col-md-4">
+        <div class=thumbnail>
+            <img src="~/images/cliente1.jpg" width="300" height="300">
+            <div class=caption>
+                <p>"Los mejores helados de Zona Oeste! Buenos precios y calidad. En serio, recomendables para todo el año!"</p>
+                <a asp-area="" asp-controller="Home" asp-action="Contact" class="btn btn-info float-md-right" role=button>Envianos tu comentario!</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class=thumbnail>
+            <img src="~/images/cliente2.jpg" width="300" height="300">
+            <div class=caption>
+                <p>"Se disfruta la variedad de sabores como así también la excelente atención al público"</p>
+                <a asp-area="" asp-controller="Home" asp-action="Contact" class="btn btn-success float-md-right" role=button>Envianos tu comentario!</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <div class=thumbnail>
+            <img src="~/images/cliente3.jpg" width="300" height="300">
+            <div class=caption>
+                <p>"Los productos son muy recomendados por venir en distintas presentaciones y tener buenos precios!"</p>
+                <a asp-area="" asp-controller="Home" asp-action="Contact" class="btn btn-info float-md-right" role=button>Envianos tu comentario!</a>
+            </div>
+        </div>
+    </div>
+</div>
