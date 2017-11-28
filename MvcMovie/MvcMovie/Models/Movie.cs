@@ -1,6 +1,6 @@
 ﻿using System;
 
-// En orden se ser capaz de referenciar a DbContext y DbSet
+// En orden de ser capaz de referenciar a DbContext y DbSet
 using System.Data.Entity;
 
 namespace MvcMovie.Models
