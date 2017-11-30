@@ -15,9 +15,28 @@ namespace MvcMovie.Controllers
         private MovieDBContext db = new MovieDBContext();
 
         // GET: Movies
-        public ActionResult Index()
+        
+        // Se pasa el título de búsqueda como datos de ruta (un segmento de URL) en lugar de como un valor de una cadena de consulta.
+        //public ActionResult Index(string id)
+        public ActionResult Index(string searchString)
         {
-            return View(db.Movies.ToList());
+            //string searchString = id;
+            var movies = from m in db.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(movies);
+        }
+
+        // POST: Movies
+        [HttpPost]
+        public string Index(FormCollection fc, string searchString)
+        {
+            return "<h3> From [HttpPost]Index: " + searchString + "</h3>";
         }
 
         // GET: Movies/Details/5

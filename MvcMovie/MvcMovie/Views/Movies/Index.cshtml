@@ -8,6 +8,16 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+
+    @* La solicitud POST debe agregar la información de búsqueda a la URL y luego debe enrutarse a la versión HttpGet del método Index. *@
+    @using (Html.BeginForm("Index", "Movies", FormMethod.Get))
+    {
+    <p>
+        Title: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+    }
+    
 </p>
 <table class="table">
     <tr>
