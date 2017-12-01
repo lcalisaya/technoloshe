@@ -13,6 +13,7 @@ namespace MvcMovie.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
+        //El método Seed se ejecutará para llenar la BD con datos de prueba
         protected override void Seed(MvcMovie.Models.MovieDBContext context)
         {
             context.Movies.AddOrUpdate(i => i.Title,
