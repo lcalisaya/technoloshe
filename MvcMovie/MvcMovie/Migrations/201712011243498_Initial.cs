@@ -2,7 +2,8 @@ namespace MvcMovie.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
-    
+
+    //La migración crea una nueva base de datos
     public partial class Initial : DbMigration
     {
         public override void Up()

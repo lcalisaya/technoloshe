@@ -20,6 +20,7 @@ namespace MvcMovie.Models
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
         public decimal Price { get; set; }
+        public string Rating { get; set; }
     }
 
     // La clase MovieDBContext representa el contexto de la BD movie en Entity Framework, el cual 
