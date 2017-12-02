@@ -10,6 +10,7 @@
     <title>@ViewBag.Title - Movie App</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" media="all" type="text/css" href="/Content/jquery-ui-timepicker-addon.css" />
 </head>
 
 <body>
@@ -44,5 +45,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+    $(function () { $('#selectedDateTime').datetimepicker(); });
+    </script>
 </body>
 </html>
