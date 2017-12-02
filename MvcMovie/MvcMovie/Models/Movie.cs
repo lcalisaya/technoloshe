@@ -10,23 +10,29 @@ namespace MvcMovie.Models
     {
         public int ID { get; set; }
 
+        //La validación especifica que el campo Título debe tener de 3 hasta 60 caracteres
         [StringLength(60, MinimumLength = 3)]
         public string Title { get; set; }
 
-        [Display(Name = "Release Date")]
-        [DataType(DataType.Date)]
+        //Se debe mostrar el campo Lanzamiento con formato para ingresar una fecha
+        [Display(Name = "Release Date"), DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
 
+        //Las validaciones al campo Género especifican que es un campo obligatorio a completar
+        //que no se pueden llenar con espacios en blanco
+        //y que la máximo longitud de caracteres es de 30
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [Required]
         [StringLength(30)]
         public string Genre { get; set; }
 
-        [Range(1, 100)]
-        [DataType(DataType.Currency)]
+        //Se valida que en el campo Precio se agregue un número entre 1 a 100
+        [Range(1, 100), DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
+        //El campo Rating no acepta espacios en blanco como un ingreso válido
+        //y la longitud máxima es de 5
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [StringLength(5)]
         public string Rating { get; set; }
