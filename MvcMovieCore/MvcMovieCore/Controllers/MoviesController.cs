@@ -84,7 +84,7 @@ namespace MvcMovieCore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -117,7 +117,7 @@ namespace MvcMovieCore.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         // El atributo [Bind] es una forma de protegerse contra el acceso a datos que no se requieren cambiar.
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (id != movie.ID)
             {
