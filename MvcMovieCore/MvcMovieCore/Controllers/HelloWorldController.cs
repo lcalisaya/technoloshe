@@ -9,32 +9,24 @@ using System.Text.Encodings.Web;
 
 namespace MvcMovieCore.Controllers
 {
+    // Los controladores son responsables de proporcionar los datos requeridos para que una plantilla de visualización (vista) presente una respuesta
     public class HelloWorldController : Controller
     {
         // 
         // GET: /HelloWorld/
-
-        public string Index()
+        // métodos del controlador == métodos acción
+        public IActionResult Index()
         {
-            return "Esta es mi acción predeterminada...";
+            return View();
         }
 
-        // GET: /HelloWorld/Welcome/ 
-        // Requires using System.Text.Encodings.Web;
-
-        // Se asigna automáticamente los parámetros nombrados en la cadena de consulta (Query string)
-        // que fueron enviados por la barra de direcciones, a los parámetros del método
-
-        // Si no se pasan valores en la URL, los parámetros se llenan con "María" y 1.
-        public string Welcome(string name = "sin nombre", int numTimes = 1)
+        // El objeto diccionario ViewData contiene datos que se pasarán desde el controlador a la vista
+        public IActionResult Welcome(string name, int numTimes = 1)
         {
-            // Interpolación de string = "Hola {variableName}"
-            return HtmlEncoder.Default.Encode($"Hola {name}, numTimes es: {numTimes}");
-        }
+            ViewData["Message"] = "Hola " + name;
+            ViewData["NumTimes"] = numTimes;
 
-        public string WelcomeTwo(string name, int ID = 1)
-        {
-            return HtmlEncoder.Default.Encode($"Hola {name}, ID: {ID}");
+            return View();
         }
     }
 }
