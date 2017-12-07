@@ -13,7 +13,7 @@ namespace ContosoUniversity.Models
         public DateTime EnrollmentDate { get; set; }
 
         // La propiedad Enrollments es de navegación
-        // Se define como virtuales para que puedan aprovechar ciertas funcionalidades del Entity Framework, como la carga diferida (lazy loading)
+        // Se define como 'virtual' para que pueda aprovechar ciertas funcionalidades del Entity Framework, como la carga diferida (lazy loading)
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }
