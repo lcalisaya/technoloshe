@@ -177,9 +177,16 @@
     <Compile Include="Migrations\201712082131479_StudentsValidations.Designer.cs">
       <DependentUpon>201712082131479_StudentsValidations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712091751250_ComplexDataModel.cs" />
+    <Compile Include="Migrations\201712091751250_ComplexDataModel.Designer.cs">
+      <DependentUpon>201712091751250_ComplexDataModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\Instructor.cs" />
+    <Compile Include="Models\OfficeAssignment.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EnrollmentDateGroup..cs" />
@@ -256,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712082131479_StudentsValidations.resx">
       <DependentUpon>201712082131479_StudentsValidations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712091751250_ComplexDataModel.resx">
+      <DependentUpon>201712091751250_ComplexDataModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

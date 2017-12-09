@@ -12,14 +12,24 @@ namespace ContosoUniversity.DAL
         {
         }
 
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<OfficeAssignment> OfficeAssignments { get; set; }
 
-        // Si no se agrega este método, el nombre de las tablas será: "Students", "Courses" y "Enrollments", todas ellas en plural
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            // Si no se agrega este método, el nombre de las tablas será: "Students", "Courses" y "Enrollments", todas ellas en plural
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            // declaraciones 'fluent API'
+            modelBuilder.Entity<Course>()
+                .HasMany(c => c.Instructors).WithMany(i => i.Courses)
+                .Map(t => t.MapLeftKey("CourseID")
+                    .MapRightKey("InstructorID")
+                    .ToTable("CourseInstructor"));
         }
     }
 }
