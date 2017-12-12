@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
+using System.Web.Script.Serialization;
 
 namespace Technoloshe20173CSeriesMVC.Models
 {
@@ -18,5 +17,7 @@ namespace Technoloshe20173CSeriesMVC.Models
         public DateTime CreationDate { get; set; }
         public int Episodes { get; set; }
         public Genre Genre { get; set; }
+        [ScriptIgnore]
+        public ICollection<User> Favourites { get; set; }
     }
 }
