@@ -1,4 +1,5 @@
-﻿@model Technoloshe20173CSeriesMVC.Models.Serie
+﻿@using Technoloshe20173CSeriesMVC.Models
+@model Technoloshe20173CSeriesMVC.Models.Serie
 
 @{
     ViewBag.Title = "Create";
@@ -6,11 +7,10 @@
 
 <h2>Create</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Serie</h4>
         <hr />
@@ -47,6 +47,13 @@
             </div>
         </div>
 
+        <select name="GenreID">
+            @foreach (Genre genre in ViewBag.Genres)
+            {
+                <option value="@genre.ID">@genre.Description</option>
+            }
+        </select>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -58,7 +65,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

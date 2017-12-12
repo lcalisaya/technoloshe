@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Technoloshe20173CSeriesMVC.Models;
 
@@ -17,6 +14,11 @@ namespace Technoloshe20173CSeriesMVC.Controllers
         // GET: Series
         public ActionResult Index()
         {
+            //preguntamos si está logueado 
+            //(porque en el login agregamos el objeto del usuario)
+            if (Session["LoggedUser"] == null)
+                return RedirectToAction("Login", "Users");
+
             return View(db.Series.ToList());
         }
 
@@ -38,15 +40,19 @@ namespace Technoloshe20173CSeriesMVC.Controllers
         // GET: Series/Create
         public ActionResult Create()
         {
+            //vamos a buscar los géneros a la base de datos
+            List<Genre> genresList = db.Genres.ToList();
+            //se lo pasamos a la vista, para que los itere y los ponga en un select
+            ViewBag.Genres = genresList;
             return View();
         }
 
         // POST: Series/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Summary,CreationDate,Episodes")] Serie serie)
+        public ActionResult Create([Bind(Include = "ID,Name,Summary,CreationDate,Episodes,GenreID")] Serie serie)
         {
             if (ModelState.IsValid)
             {
@@ -75,7 +81,7 @@ namespace Technoloshe20173CSeriesMVC.Controllers
 
         // POST: Series/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,Summary,CreationDate,Episodes")] Serie serie)

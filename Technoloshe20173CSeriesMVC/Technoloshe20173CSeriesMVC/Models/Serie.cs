@@ -14,7 +14,12 @@ namespace Technoloshe20173CSeriesMVC.Models
         [Required]
         public string Name { get; set; }
         public string Summary { get; set; }
+        
+        //agregamos los siguientes atributos para que aparezca el selector de fecha en las vistas
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreationDate { get; set; }
+
         public int Episodes { get; set; }
         public int GenreID { get; set; }
         [ScriptIgnore]

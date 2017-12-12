@@ -24,7 +24,7 @@ namespace Technoloshe20173CSeriesMVC.Controllers
 
         public ActionResult AddFavourite(string userMail, int serieID)
         {
-            User user = db.Users.FirstOrDefault(u => u.Mail.Equals(userMail));
+            User user = db.Users.Include("Favourites").FirstOrDefault(u => u.Mail.Equals(userMail));
             Serie serie = db.Series.FirstOrDefault(s => s.ID == serieID);
 
             if (user != null && serie != null)
