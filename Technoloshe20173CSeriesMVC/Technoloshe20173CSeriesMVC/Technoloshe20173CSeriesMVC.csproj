@@ -162,6 +162,10 @@
     <Compile Include="Migrations\201712121529214_UserFavourites.Designer.cs">
       <DependentUpon>201712121529214_UserFavourites.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712121710399_CambioNombreFKGenreID.cs" />
+    <Compile Include="Migrations\201712121710399_CambioNombreFKGenreID.Designer.cs">
+      <DependentUpon>201712121710399_CambioNombreFKGenreID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Serie.cs" />
@@ -240,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712121529214_UserFavourites.resx">
       <DependentUpon>201712121529214_UserFavourites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121710399_CambioNombreFKGenreID.resx">
+      <DependentUpon>201712121710399_CambioNombreFKGenreID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

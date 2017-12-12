@@ -16,7 +16,7 @@ namespace Technoloshe20173CSeriesMVC.Models
         public string Summary { get; set; }
         public DateTime CreationDate { get; set; }
         public int Episodes { get; set; }
-        public Genre Genre { get; set; }
+        public int GenreID { get; set; }
         [ScriptIgnore]
         public ICollection<User> Favourites { get; set; }
     }
