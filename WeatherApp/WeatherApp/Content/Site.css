@@ -1,0 +1,140 @@
+﻿/*Paleta de colores:
+    #F8F5E4
+    #F97300
+    #0E3047
+    #10828C
+*/
+
+* {
+    font-family: 'Lato', sans-serif;
+    color: #F8F5E4;
+}
+
+body {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    background-color: #0E3047;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 0, 0, 0, .5 ) url("ajax-loader.gif") 50% 50% no-repeat;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+    body.loading .modal {
+        display: block;
+    }
+
+.dropdown-menu.dropdown-menu-wide.dropdown-menu-right {
+    min-width: 100%;
+    text-align: center;
+    background-color: #10828C;
+}
+
+.btn-primary.btn-radiobutton {
+    border: none;
+}
+
+canvas {
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.my-navbar-style {
+    background-color: #10828C;
+    padding: 13px;
+}
+
+#my-footer {
+    background-color: #F97300;
+}
+
+    #my-footer p {
+        padding: 25px;
+        text-align: center;
+        color: #0E3047;
+    }
+
+#location {
+    color: #F8F5E4;
+}
+
+.panel * {
+    color: #0A0A0A;
+}
+
+.father {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.father-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.father-left-center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.my-nav-text, .my-nav-text > a, .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+    font-size: 20px;
+    color: #F8F5E4;
+}
+
+#voting-tab:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    background-color: #10828C;
+    border: 0.5px solid #0A0A0A;
+}
+
+.my-link-text > a {
+    color: #10828C;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #10828C;
+    border-color: #10828C;
+}
+
+.vote-btn, .vote-heading {
+    color: #F8F5E4;
+}

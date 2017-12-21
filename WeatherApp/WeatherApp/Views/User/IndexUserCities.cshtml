@@ -1,0 +1,100 @@
+﻿@using WeatherApp.Models
+
+@{
+    
+    ViewBag.Title = "Sus ciudades";
+
+    if (TempData["message"] != null)
+    {
+        <div class="alert alert-success my-alert-message-mvc">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>@TempData["Message"]</strong>
+        </div>
+    }
+
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success my-alert-message-mvc">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>@ViewBag.Message</strong>
+        </div>
+    }
+}
+
+@if (ViewBag.UserCities != null && ViewBag.UserID != null)
+{
+
+    <div style="display:none;" id="userid">@ViewBag.UserID</div>
+
+    <h2>Ciudades guardadas:</h2>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" >
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Ciudad/Ubicación</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var city in ViewBag.UserCities)
+                    {
+                        <tr>
+                            <td class="location-city-td">@city.Location</td>
+                            <td align="center"><button id="@city.Location" type="button" class="btn btn-primary btn-md city-button" >Eliminar ciudad</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div style="display:none" class="alert alert-success my-alert-message">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <strong style="color:#0E3047;">Ciudad eliminada.</strong>
+    </div>
+}
+
+<h4>
+    @Html.ActionLink("Volver al Inicio", "Index", new { controller = "Home", id = @ViewBag.UserID })
+</h4>
+
+@section Scripts{
+    <script>
+
+        //Se elimina una ciudad de la lista de ciudades del usuario
+        $(".city-button").click(function () {
+            var location = $(this).closest("tr").find(".location-city-td").text();
+            var rowLocation = $(this).closest("tr").find(".location-city-td");
+            var userid = $("#userid").text();
+            var dataform = {};
+            dataform['userID'] = userid;
+            dataform['location'] = location;
+
+            console.log(location);
+            console.log(userid);
+            console.log(JSON.stringify(dataform));
+
+            var element = this;
+
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/User/RemoveUserCity",
+                traditional: true,
+                data: JSON.stringify(dataform),
+                contentType: "application/json; charset=utf-8",
+                success: function (res) {
+                    $(element).closest("tr").remove();
+                    $(".my-alert-message").fadeIn();
+                    setTimeout(function () { $(".my-alert-message").slideUp("slow") }, 2000);
+                },
+                error: function (xhr) {
+                    alert("error");
+                }
+            });
+        });
+    </script>
+}

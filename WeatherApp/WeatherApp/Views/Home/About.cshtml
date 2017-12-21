@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Acerca";
+}
+
+<h2><u>Agradecimientos:</u></h2>
+
+<h3 class="my-link-text">
+    Este proyecto fue basado e inspirado en la aplicación del clima de:
+    <a href="https://github.com/ayoisaiah/weather-app">Ayo Isaiah</a>
+</h3>
+
+
+<h3 class="my-link-text">
+    Su aplicación funcionando en el siguiente link:
+    <a href="https://ayoisaiah.com/weather-app/">Weather App</a>
+</h3>
+
+<br />
+<br />
+<br />
+
+@if (ViewBag.UserID != null)
+{
+<h4 class="my-link-text">
+    <a href="/Home/Index/@ViewBag.UserID">Volver al Inicio</a>
+    @* NO FUNCIONA EL LINK! Arreglar.
+        @Html.ActionLink("Volver al Inicio", "Index", "Home", new { userId = @ViewBag.UserID })
+    *@
+</h4>
+}
+else
+{
+    <h4 class="my-link-text">
+        @Html.ActionLink("Volver al Inicio", "Index", "Home")
+    </h4>
+}
+

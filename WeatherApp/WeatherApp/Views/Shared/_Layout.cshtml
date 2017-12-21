@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title - Los días y el clima</title>
+    <link rel="shortcut icon" type="image/png" href="~/Content/cloudy.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top my-navbar-style">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*NO FUNCIONA EL LINK! Arreglar.*@
+                @Html.ActionLink("Los días y el clima", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <form class="navbar-form navbar-left" id="search-form" action="#">
+                    <div class="form-group">
+                        <input type="text" id="search-field" class="form-control" placeholder="Buscar ciudad">
+                    </div>
+                    <button type="submit" class="btn btn-info">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    @RenderSection("LoggedUser", required: false)
+                    @RenderSection("NoneLoggedUser", required: false)
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container body-content">
+
+        @RenderBody()
+
+        <footer id="my-footer">
+            <p>&copy; @DateTime.Now.Year - Los días y el clima</p>
+        </footer>
+    </div>
+
+    <div class="modal"></div>
+
+    @*_____________________________________________________________________________________________*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        //Mientras dure una solicitud ajax, se mostrará la pantalla principal en segundo plano
+        $body = $("body");
+        $(document).on({
+            ajaxStart: function () { $body.addClass("loading"); },
+            ajaxStop: function () { $body.removeClass("loading"); }
+        });
+    </script>
+
+</body>
+</html>
