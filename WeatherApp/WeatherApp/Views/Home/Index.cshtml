@@ -7,7 +7,6 @@
         <div class="alert alert-success my-alert-message-mvc">
             <button type="button" class="close" data-dismiss="alert">x</button>
             <strong style="color:#0E3047;">@TempData["Message"]</strong>
-
         </div>
     }
 
@@ -31,7 +30,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hola @Model.UserName <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li class="my-nav-text">@Html.ActionLink("Administrar ciudades", "IndexUserCities", new { controller = "User", userId = @ViewBag.User.ID })</li>
-                <li class="my-nav-text">@Html.ActionLink("Cerrar Sesión", "Logout", "User")</li>
+                <li class="my-nav-text">@Html.ActionLink("Cerrar sesión", "Logout", "User")</li>
             </ul>
         </li>
     }
@@ -44,6 +43,11 @@ else
         <li class="my-nav-text">@Html.ActionLink("Iniciar sesión", "Login", "User")</li>
     }
 }
+
+<div style="display:none" class="alert alert-success my-alert-message">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong style="color:#0E3047;">Ciudad guardada en su lista de ciudades</strong>
+</div>
 
 <div class="main">
     <header>
@@ -191,6 +195,6 @@ else
 </div>
 
 @section Scripts{
-    <script src="~/Scripts/main.js?01"></script>
+    <script src="~/Scripts/main.js?02"></script>
     <script src="~/Scripts/skycons.js"></script>
 }

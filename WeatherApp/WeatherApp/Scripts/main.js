@@ -27,9 +27,11 @@
                     <li class="search-saved-city"><a href="#">${dataform.CityName}</a></li>
                     `
                 );
+                $(".my-alert-message").fadeIn();
+                setTimeout(function () { $(".my-alert-message").slideUp("slow") }, 2000);
             },
             error: function (xhr) {
-                alert('error');
+                alert('ciudad ya guardada.');
             }
         });
     });
@@ -49,6 +51,12 @@
     if ($('.my-alert-message-mvc').length) {
         setTimeout(function () { $('.my-alert-message-mvc').slideUp("slow") }, 3000);
     }; 
+
+    //Cuando se selecciona una de las ciudades guardadas se busca su pronóstico
+    $("#saved-cities-list li").on("click", function () {
+        const userCity = $(this).text();
+        findForecast(userCity);
+    });
 
 });
 
@@ -268,11 +276,6 @@ $("#search-form").on("submit", function (event) {
     const city = $("#search-field").val().trim();
     findForecast(city);
     document.querySelector("#search-form").reset();
-});
-
-$("#saved-cities-list li").on("click", function () {
-    const userCity = $(this).text();
-    findForecast(userCity);
 });
 
 $(".search-button").click(function (e) {

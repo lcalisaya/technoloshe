@@ -109,7 +109,7 @@ namespace WeatherApp.Controllers
     public ActionResult AddUserCity(string cityName, string userID)
     {
       int userIDInt = Int32.Parse(userID);
-      UserCity cityAlreadySaved = db.UserCities.Where(i => i.UserID == userIDInt && i.Location == cityName).FirstOrDefault();
+      var cityAlreadySaved = db.UserCities.Where(i => i.UserID == userIDInt && i.Location == cityName);
       if (cityAlreadySaved != null)
       {
         UserCity userCity = new UserCity { UserID = Int32.Parse(userID), Location = cityName };
