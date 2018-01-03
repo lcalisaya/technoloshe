@@ -3,13 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WeatherApp.Models
 {
-    public class UserCity
+    public class Reply
     {
         [Key, Column(Order = 0)]
         public int UserID { get; set; }
 
         [Key, Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public string Location { get; set; }
-    }
+        public int QuestionID { get; set; }
+        
+        public string Q { get; set; }
+  }
 }
